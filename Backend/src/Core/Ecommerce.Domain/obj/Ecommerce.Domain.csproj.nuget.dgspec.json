@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj": {}
+    "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj": {
+    "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj",
+        "projectUniqueName": "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj",
         "projectName": "Ecommerce.Domain",
-        "projectPath": "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj",
+        "projectPath": "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj",
         "packagesPath": "C:\\Users\\ingjr\\.nuget\\packages\\",
-        "outputPath": "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\obj\\",
+        "outputPath": "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -42,11 +42,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {

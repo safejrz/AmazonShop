@@ -82,8 +82,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\Ecommerce.Application.csproj": {
-              "projectPath": "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\Ecommerce.Application.csproj"
+            "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\Ecommerce.Application.csproj": {
+              "projectPath": "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\Ecommerce.Application.csproj"
             }
           }
         }
@@ -92,11 +92,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {

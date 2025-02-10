@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "20qkRK+w3z4=",
+  "dgSpecHash": "ejz33ehbghRGl6v92zh9HsiAAZceilRruenysxpomETrjTxk8ovf/0UAci5GChjCTTftoOXaQ43/nBoPZxvuxA==",
   "success": true,
-  "projectFilePath": "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj",
+  "projectFilePath": "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
