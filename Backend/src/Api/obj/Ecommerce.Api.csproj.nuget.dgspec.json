@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Api\\Ecommerce.Api.csproj": {}
+    "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Api\\Ecommerce.Api.csproj": {}
   },
   "projects": {
-    "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Api\\Ecommerce.Api.csproj": {
+    "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Api\\Ecommerce.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Api\\Ecommerce.Api.csproj",
+        "projectUniqueName": "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Api\\Ecommerce.Api.csproj",
         "projectName": "Ecommerce.Api",
-        "projectPath": "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Api\\Ecommerce.Api.csproj",
+        "projectPath": "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Api\\Ecommerce.Api.csproj",
         "packagesPath": "C:\\Users\\ingjr\\.nuget\\packages\\",
-        "outputPath": "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Api\\obj\\",
+        "outputPath": "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -36,8 +36,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\Ecommerce.Application.csproj": {
-                "projectPath": "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\Ecommerce.Application.csproj"
+              "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\Ecommerce.Application.csproj": {
+                "projectPath": "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\Ecommerce.Application.csproj"
               },
               "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Infrastructure\\Ecommerce.Infrastructure.csproj": {
                 "projectPath": "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Infrastructure\\Ecommerce.Infrastructure.csproj"
@@ -83,18 +83,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.120\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\Ecommerce.Application.csproj": {
+    "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\Ecommerce.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\Ecommerce.Application.csproj",
+        "projectUniqueName": "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\Ecommerce.Application.csproj",
         "projectName": "Ecommerce.Application",
-        "projectPath": "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\Ecommerce.Application.csproj",
+        "projectPath": "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\Ecommerce.Application.csproj",
         "packagesPath": "C:\\Users\\ingjr\\.nuget\\packages\\",
-        "outputPath": "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\obj\\",
+        "outputPath": "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -119,8 +119,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj": {
-                "projectPath": "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj"
+              "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj": {
+                "projectPath": "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj"
               }
             }
           }
@@ -150,18 +150,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.120\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj": {
+    "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj",
+        "projectUniqueName": "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj",
         "projectName": "Ecommerce.Domain",
-        "projectPath": "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj",
+        "projectPath": "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\Ecommerce.Domain.csproj",
         "packagesPath": "C:\\Users\\ingjr\\.nuget\\packages\\",
-        "outputPath": "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\obj\\",
+        "outputPath": "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -197,6 +197,16 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -213,7 +223,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.120\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -249,8 +259,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\Ecommerce.Application.csproj": {
-                "projectPath": "c:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\Ecommerce.Application.csproj"
+              "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\Ecommerce.Application.csproj": {
+                "projectPath": "C:\\Git\\Courses\\Udemy\\ASP.NET Core\\AmazonShop\\Backend\\src\\Core\\Ecommerce.Application\\Ecommerce.Application.csproj"
               }
             }
           }
@@ -280,7 +290,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.120\\RuntimeIdentifierGraph.json"
         }
       }
     }
