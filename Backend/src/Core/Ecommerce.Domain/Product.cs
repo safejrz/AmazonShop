@@ -11,6 +11,8 @@ namespace Ecommerce.Domain;
 
         public int Rating { get; set; }
 
+        public string? Vendedor { get; set; }
+
         public int Stock { get; set; }
 
         public ProductStatus Status { get; set; }
