@@ -12,5 +12,6 @@ namespace Ecommerce.Domain;
         public string? Comentario { get; set; }
 
         public int ProductId { get; set; }
+        public virtual Product? Product { get; set; }
     }
 
