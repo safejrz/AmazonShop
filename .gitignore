@@ -26,8 +26,16 @@ x86/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
+*.Bin/
+*.bin/
+*.Bin
+*.bin
 *.[Bb]in/
 *.[Oo]bj/
+*.Obj/
+*.obj/
+*.Obj
+*.obj
 *./[Bb]in/
 *./[Oo]bj/
 [Oo]ut/
