@@ -1,15 +1,40 @@
 using Ecommerce.Domain;
+using Ecommerce.Domain.Common;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Ecommerce.Persistence;
+namespace Ecommerce.Infrastructure.Persistence;
 
-public class EcommerceDbContext : IdentityDbContext<Usuario>
-{
+public class EcommerceDbContext : IdentityDbContext<Usuario> {
+
 
     public EcommerceDbContext(DbContextOptions<EcommerceDbContext> options) : base(options)
-    { }
+    {}
+
+    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken=default)
+    {
+        var userName = "system";
+
+        foreach (var entry in ChangeTracker.Entries<BaseDomainModel>())
+        {
+            switch(entry.State)
+            {
+                case EntityState.Added:
+                    entry.Entity.CreatedDate = DateTime.Now;
+                    entry.Entity.CreatedBy = userName;
+                    break;
+
+                case EntityState.Modified:
+                    entry.Entity.LastModifiedDate = DateTime.Now;
+                    entry.Entity.LastModifiedBy = DateTime.Now;
+                    break;
+            }
+        }
+
+        return base.SaveChangesAsync(cancellationToken);
+    }
+
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -17,10 +42,11 @@ public class EcommerceDbContext : IdentityDbContext<Usuario>
 
         builder.Entity<Category>()
             .HasMany(p => p.Products)
-            .WithOne(c => c.Category)
+            .WithOne(r => r.Category)
             .HasForeignKey(r => r.CategoryId)
             .IsRequired()
             .OnDelete(DeleteBehavior.Restrict);
+        
 
         builder.Entity<Product>()
             .HasMany(p => p.Reviews)
@@ -36,15 +62,18 @@ public class EcommerceDbContext : IdentityDbContext<Usuario>
             .IsRequired()
             .OnDelete(DeleteBehavior.Cascade);
 
+         
         builder.Entity<ShoppingCart>()
-            .HasMany(p => p.ShoppingCartItems)
-            .WithOne(r => r.ShoppingCart)
-            .HasForeignKey(r => r.ShoppingCartId)
-            .IsRequired()
-            .OnDelete(DeleteBehavior.Cascade);
+        .HasMany(p => p.ShoppingCartItems)
+        .WithOne(r => r.ShoppingCart)
+        .HasForeignKey(r => r.ShoppingCartId)
+        .IsRequired()
+        .OnDelete(DeleteBehavior.Cascade);
+        
 
         builder.Entity<Usuario>().Property(x => x.Id).HasMaxLength(36); //250
-        builder.Entity<IdentityRole>().Property(x => x.Id).HasMaxLength(90);
+        builder.Entity<Usuario>().Property(x => x.NormalizedUserName).HasMaxLength(90);
+        builder.Entity<IdentityRole>().Property(x => x.Id).HasMaxLength(36);
         builder.Entity<IdentityRole>().Property(x => x.NormalizedName).HasMaxLength(90);
     }
 
@@ -60,5 +89,5 @@ public class EcommerceDbContext : IdentityDbContext<Usuario>
     public DbSet<ShoppingCartItem>? ShoppingCartItems { get; set; }
     public DbSet<Country>? Countries { get; set; }
     public DbSet<OrderAddress>? OrderAddresses { get; set; }
-
+    
 }

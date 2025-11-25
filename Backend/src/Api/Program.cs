@@ -1,6 +1,6 @@
 using System.Text;
 using Ecommerce.Domain;
-using Ecommerce.Persistence;
+using Ecommerce.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -13,7 +13,6 @@ using Microsoft.IdentityModel.Tokens;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<EcommerceDbContext>(options => 
-
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString"),
     b => b.MigrationsAssembly(typeof(EcommerceDbContext).Assembly.FullName)
     )
@@ -27,6 +26,7 @@ builder.Services.AddControllers(opt =>
     opt.Filters.Add(new AuthorizeFilter(policy));
 });
 
+
 IdentityBuilder identityBuilder = builder.Services.AddIdentityCore<Usuario>();
 identityBuilder = new IdentityBuilder(identityBuilder.UserType, identityBuilder.Services);
 
@@ -37,6 +37,7 @@ identityBuilder.AddEntityFrameworkStores<EcommerceDbContext>();
 identityBuilder.AddSignInManager<SignInManager<Usuario>>();
 
 builder.Services.TryAddSingleton<ISystemClock, SystemClock>();
+
 
 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:Key"]!));
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -59,6 +60,10 @@ builder.Services.AddCors(options =>
     );
     
 });
+
+
+
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

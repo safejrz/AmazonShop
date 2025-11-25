@@ -1,5 +1,6 @@
 ﻿using System.Linq.Expressions;
 using Ecommerce.Application.Persistence;
+using Ecommerce.Infrastructure.Persistence;
 using MailKit.Search;
 using Microsoft.EntityFrameworkCore;
 
