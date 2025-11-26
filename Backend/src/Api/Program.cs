@@ -12,6 +12,8 @@ using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddInfrastructureServices(builder.Configuration);
+
 builder.Services.AddDbContext<EcommerceDbContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString"),
     b => b.MigrationsAssembly(typeof(EcommerceDbContext).Assembly.FullName)
@@ -85,5 +87,33 @@ app.UseAuthorization();
 app.UseCors("CorsPolicy");
 
 app.MapControllers();
+
+
+using(var scope = app.Services.CreateScope())
+{
+    var service = scope.ServiceProvider;
+    var loggerFactory = service.GetRequiredService<ILoggerFactory>();
+
+    try
+    {
+        var context = service.GetRequiredService<EcommerceDbContext>();
+        var usuarioManager = service.GetRequiredService<UserManager<Usuario>>();
+        var roleManager = service.GetRequiredService<RoleManager<IdentityRole>>();
+        await context.Database.MigrateAsync();
+        await EcommerceDbContextData.LoadDataAsync(context, usuarioManager, roleManager, loggerFactory);
+    }
+    catch(Exception ex)
+    {
+        var logger = loggerFactory.CreateLogger<Program>();
+        logger.LogError(ex, "Error en la migration");
+    }
+}
+
+
+
+
+
+
+
 
 app.Run();

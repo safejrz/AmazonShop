@@ -2,8 +2,10 @@ using System.Linq.Expressions;
 
 namespace Ecommerce.Application.Persistence;
 
+
 public interface IAsyncRepository<T> where T : class
 {
+
     Task<IReadOnlyList<T>> GetAllAsync();
 
     Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate);
@@ -45,5 +47,6 @@ public interface IAsyncRepository<T> where T : class
 
     void DeleteRange(IReadOnlyList<T> entities);
 
-    
+
 }
+

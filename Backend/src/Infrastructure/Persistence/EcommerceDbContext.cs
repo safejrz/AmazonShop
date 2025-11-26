@@ -27,7 +27,7 @@ public class EcommerceDbContext : IdentityDbContext<Usuario> {
 
                 case EntityState.Modified:
                     entry.Entity.LastModifiedDate = DateTime.Now;
-                    entry.Entity.LastModifiedBy = DateTime.Now;
+                    entry.Entity.LastModifiedBy = userName;
                     break;
             }
         }
@@ -77,17 +77,15 @@ public class EcommerceDbContext : IdentityDbContext<Usuario> {
         builder.Entity<IdentityRole>().Property(x => x.NormalizedName).HasMaxLength(90);
     }
 
-    public DbSet<Product>? Products { get; set; }
-    public DbSet<Category>? Categories { get; set; }
+    public DbSet<Product>? Products { get; set; }    
+    public DbSet<Category>? Categories {get;set;}
     public DbSet<Image>? Images { get; set; }
     public DbSet<Address>? Addresses { get; set; }
     public DbSet<Order>? Orders { get; set; }
     public DbSet<OrderItem>? OrderItems { get; set; }
-
     public DbSet<Review>? Reviews { get; set; }
     public DbSet<ShoppingCart>? ShoppingCarts { get; set; }
     public DbSet<ShoppingCartItem>? ShoppingCartItems { get; set; }
     public DbSet<Country>? Countries { get; set; }
     public DbSet<OrderAddress>? OrderAddresses { get; set; }
-    
 }

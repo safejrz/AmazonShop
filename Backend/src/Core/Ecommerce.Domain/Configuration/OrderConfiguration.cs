@@ -7,8 +7,7 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
 {
     public void Configure(EntityTypeBuilder<Order> builder)
     {
-        builder.OwnsOne(o => o.OrderAddress, x =>
-        {
+        builder.OwnsOne(o => o.OrderAddress, x => {
             x.WithOwner();
         });
 
@@ -16,8 +15,8 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
         .OnDelete(DeleteBehavior.Cascade);
 
         builder.Property(s => s.Status).HasConversion(
-                o => o.ToString(),
-                o => (OrderStatus)Enum.Parse(typeof(OrderStatus), o)
-                );
+            o => o.ToString(),
+            o => (OrderStatus)Enum.Parse(typeof(OrderStatus), o)
+        );
     }
 }

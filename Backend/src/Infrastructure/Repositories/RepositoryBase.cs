@@ -1,10 +1,9 @@
-﻿using System.Linq.Expressions;
+using System.Linq.Expressions;
 using Ecommerce.Application.Persistence;
 using Ecommerce.Infrastructure.Persistence;
-using MailKit.Search;
 using Microsoft.EntityFrameworkCore;
 
-namespace Ecommerce.Persistence.Repositories;
+namespace Ecommerce.Infrastructure.Persistence.Repositories;
 
 public class RepositoryBase<T> : IAsyncRepository<T> where T : class
 {
@@ -15,21 +14,24 @@ public class RepositoryBase<T> : IAsyncRepository<T> where T : class
         _context = context;
     }
 
+
+
+    
     public async Task<T> AddAsync(T entity)
     {
         _context.Set<T>().Add(entity);
-        await _context.SaveChangesAsync().ContinueWith(task => entity);
+        await _context.SaveChangesAsync();
         return entity;
     }
 
     public void AddEntity(T entity)
     {
-        _context.Set<T>().Add(entity);
+         _context.Set<T>().Add(entity);
     }
 
     public void AddRange(List<T> entities)
     {
-        _context.Set<T>().AddRange(entities);
+         _context.Set<T>().AddRange(entities);
     }
 
     public async Task DeleteAsync(T entity)
@@ -40,7 +42,7 @@ public class RepositoryBase<T> : IAsyncRepository<T> where T : class
 
     public void DeleteEntity(T entity)
     {
-        _context.Set<T>().Remove(entity);
+           _context.Set<T>().Remove(entity);
     }
 
     public void DeleteRange(IReadOnlyList<T> entities)
@@ -55,25 +57,28 @@ public class RepositoryBase<T> : IAsyncRepository<T> where T : class
 
     public async Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate)
     {
-        return await _context.Set<T>().Where(predicate).ToListAsync();
+         return await _context.Set<T>().Where(predicate).ToListAsync();
     }
 
     public async Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>>? predicate, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy, string? includeString, bool disableTracking = true)
     {
-        IQueryable<T> query = _context.Set<T>();
+       IQueryable<T> query = _context.Set<T>();
         if (disableTracking) query = query.AsNoTracking();
 
         if (!string.IsNullOrWhiteSpace(includeString)) query = query.Include(includeString);
 
         if (predicate != null) query = query.Where(predicate);
 
-        if (orderBy != null) return await orderBy(query).ToListAsync();
+        if (orderBy != null)
+            return await orderBy(query).ToListAsync();
+
 
         return await query.ToListAsync();
     }
 
     public async Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>>? predicate, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, List<Expression<Func<T, object>>>? includes = null, bool disableTracking = true)
     {
+       
         IQueryable<T> query = _context.Set<T>();
         if (disableTracking) query = query.AsNoTracking();
 
@@ -81,14 +86,20 @@ public class RepositoryBase<T> : IAsyncRepository<T> where T : class
 
         if (predicate != null) query = query.Where(predicate);
 
-        if (orderBy != null) return await orderBy(query).ToListAsync();
+        if (orderBy != null)
+            return await orderBy(query).ToListAsync();
+
 
         return await query.ToListAsync();
+
+
     }
 
     public async Task<T> GetByIdAsync(int id)
     {
-      return (await _context.Set<T>().FindAsync(id))!;
+        
+        return (await _context.Set<T>().FindAsync(id))!;
+
     }
 
     public async Task<T> GetEntityAsync(Expression<Func<T, bool>>? predicate, List<Expression<Func<T, object>>>? includes = null, bool disableTracking = true)
@@ -99,14 +110,12 @@ public class RepositoryBase<T> : IAsyncRepository<T> where T : class
         if (includes != null) query = includes.Aggregate(query, (current, include) => current.Include(include));
 
         if (predicate != null) query = query.Where(predicate);
-
         return (await query.FirstOrDefaultAsync())!;
-        
     }
 
     public async Task<T> UpdateAsync(T entity)
     {
-        _context.Set<T>().Attach(entity);
+       _context.Set<T>().Attach(entity);
         _context.Entry(entity).State = EntityState.Modified;
         await _context.SaveChangesAsync();
         return entity;
@@ -114,7 +123,7 @@ public class RepositoryBase<T> : IAsyncRepository<T> where T : class
 
     public void UpdateEntity(T entity)
     {
-        _context.Set<T>().Attach(entity);
-        _context.Entry(entity).State = EntityState.Modified;
+       _context.Set<T>().Attach(entity);
+       _context.Entry(entity).State = EntityState.Modified;
     }
 }

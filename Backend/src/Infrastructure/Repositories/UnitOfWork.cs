@@ -2,11 +2,11 @@ using System.Collections;
 using Ecommerce.Application.Persistence;
 using Ecommerce.Infrastructure.Persistence;
 
-namespace Ecommerce.Persistence.Repositories;
+namespace Ecommerce.Infrastructure.Persistence.Repositories;
 
 public class UnitOfWork : IUnitOfWork
 {
-    private Hashtable? repositories;
+    private Hashtable? _repositories;
 
     private readonly EcommerceDbContext _context;
 
@@ -15,40 +15,44 @@ public class UnitOfWork : IUnitOfWork
         _context = context;
     }
 
+
     public async Task<int> Complete()
     {
-        try
+     
+        try 
         {
             return await _context.SaveChangesAsync();
         }
-        catch (Exception ex)
+        catch(Exception e)
         {
-            // Log the exception or handle it as needed
-            throw new Exception("Error en transaccion.", ex);
+            throw new Exception("Error en transacion", e);
         }
+
     }
 
     public void Dispose()
     {
-        _context.Dispose();
+       _context.Dispose();
     }
-    
+
     public IAsyncRepository<TEntity> Repository<TEntity>() where TEntity : class
     {
-        if (repositories == null)
-        {
-            repositories = new Hashtable();
-        }
+         if (_repositories is null)
+            { 
+                _repositories = new Hashtable();
+            }
 
-        var type = typeof(TEntity).Name;
+            var type = typeof(TEntity).Name;
 
-        if (!repositories.ContainsKey(type))
-        {
-            var repositoryType = typeof(RepositoryBase<>);
-            var repositoryInstance = Activator.CreateInstance(repositoryType.MakeGenericType(typeof(TEntity)), _context);
-            repositories.Add(type, repositoryInstance);
-        }
+            if (!_repositories.ContainsKey(type))
+            {
+                var repositoryType = typeof(RepositoryBase<>);
+                var repositoryInstance = Activator.CreateInstance(repositoryType.MakeGenericType(typeof(TEntity)), _context);
+                _repositories.Add(type, repositoryInstance);
+            }
 
-        return (IAsyncRepository<TEntity>)repositories[type]!;
+            return (IAsyncRepository<TEntity>)_repositories[type]!;
+
+
     }
 }
